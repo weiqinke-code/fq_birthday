@@ -25,7 +25,7 @@ var S = {
       if (i !== -1) {
         S.UI.simulate(decodeURI(action).substring(i + 3));
       } else {
-        S.UI.simulate('|点击此处');
+        S.UI.simulate('|生日快乐！');
       }
 
       S.Drawing.loop(function () {
@@ -762,21 +762,4 @@ S.Shape = (function () {
 function init(start){
   S.init(start);
 
-}
-function starttime(){
-
-        hhh=time('2000/1/1');     // 生日时间
-        ptimer = setTimeout(starttime,1000); // 添加计时器
-}
-function time(obj,futimg){
-        var nowtime = new Date().getTime(); // 现在时间转换为时间戳
-        var futruetime =  new Date(futimg).getTime(); // 未来时间转换为时间戳
-        var msec = nowtime-futruetime; // 毫秒 未来时间-现在时间
-        var time = (msec/1000);  // 毫秒/1000
-        var day = parseInt(time/86400); // 天  24*60*60*1000 
-        var hour = parseInt(time/3600)-24*day;    // 小时 60*60 总小时数-过去的小时数=现在的小时数 
-        var minute = parseInt(time%3600/60); // 分 -(day*24) 以60秒为一整份 取余 剩下秒数 秒数/60 就是分钟数
-        var second = parseInt(time%60);  // 以60秒为一整份 取余 剩下秒数
-        var hhh="陈陈<br>你已经来到这个世界：<br>"+day+"天"+hour+"小时"+minute+"分"+second+"秒"+"了<br><span>今日是你的生日，愿所有的快乐、所有的幸福、所有的温馨、所有的好运围绕在你身边。生日快乐！</span><p>下<br>滑<br>有<br>惊<br>喜</p>"
-		return hhh;
 }
